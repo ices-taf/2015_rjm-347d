@@ -15,4 +15,4 @@ load("input/input.RData")
 i1 <- head(tail(survey$Index, 7), 5)
 names(i1) <- 2008:2012
 dls <- DLS3.2(mean(catch$Catch), survey$Index, i1=i1)
-writeDLS(dls, "model/dls.txt")
+write.dls(dls, "model/dls.txt")
