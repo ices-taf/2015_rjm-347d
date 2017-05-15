@@ -9,7 +9,7 @@ require(icesTAF, quietly=TRUE)
 ftp <- "../../../ftp/wgef/2015/rjm-347d/"
 
 survey <- read.csv(paste0(ftp, "input/survey.csv"))
-dls <- readDLS(paste0(ftp, "output/dls.txt"))
+dls <- read.dls(paste0(ftp, "output/dls.txt"))
 
 ## Plot
 xlim <- c(1990, 2016)
