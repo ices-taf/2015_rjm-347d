@@ -5,5 +5,5 @@
 
 dir.create("output", showWarnings=FALSE, recursive=TRUE)
 
-# Copy DLS results to local FTP directory
+# Copy DLS results to output directory
 invisible(file.copy("model/dls.txt", "output/dls.txt", overwrite=TRUE))

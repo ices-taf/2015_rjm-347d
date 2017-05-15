@@ -3,7 +3,7 @@
 ## Before: catch.csv, survey.csv
 ## After:  input.RData
 
-ftp <- "../../../ftp/wgef/2015/rjm-347d/"
+ftp <- "../ftp/wgef/2015/rjm-347d/"
 
 dir.create("input", showWarnings=FALSE)
 

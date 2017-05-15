@@ -4,7 +4,7 @@
 ## After:  survey.csv, catch.csv (ftp/input)
 
 ftp.remote <- "https://raw.githubusercontent.com/ices-taf/ftp/master/wgef/2015/rjm-347d/"
-ftp.local <- "../../../ftp/wgef/2015/rjm-347d/"
+ftp.local <- "../ftp/wgef/2015/rjm-347d/"
 
 dir.create(paste0(ftp.local,"input"), showWarnings=FALSE, recursive=TRUE)
 

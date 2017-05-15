@@ -6,10 +6,10 @@
 require(icesTAF, quietly=TRUE)
 
 ## Download DLS input and output from local FTP server
-ftp <- "../../../ftp/wgef/2015/rjm-347d/"
+ftp <- "../ftp/wgef/2015/rjm-347d/"
 
 survey <- read.csv(paste0(ftp, "input/survey.csv"))
-dls <- read.dls(paste0(ftp, "output/dls.txt"))
+dls <- read.dls("output/dls.txt")
 
 ## Plot
 xlim <- c(1990, 2016)

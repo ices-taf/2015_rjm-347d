@@ -4,9 +4,9 @@ require(icesTAF, quietly=TRUE)
 
 unlink("input", recursive=TRUE)
 unlink("model", recursive=TRUE)
+unlink("output", recursive=TRUE)
 
-ftp <- "../../../ftp/wgef/2015/rjm-347d/"
+ftp <- "../ftp/wgef/2015/rjm-347d/"
 unlink(paste0(ftp,"input"), recursive=TRUE)
-unlink(paste0(ftp,"output"), recursive=TRUE)
 
-dir.remove("../../../ftp", recursive=TRUE)
+dir.remove("../ftp", recursive=TRUE)
