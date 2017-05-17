@@ -1,4 +1,4 @@
-## Run core scripts: db, input, model, output
+## Run core scripts: db, input, model, output, upload
 
 attach(NULL, name="TAF")
 assign("taf.root", getwd(), pos="TAF")
