@@ -1,9 +1,9 @@
-## Write DLS results into output folder
+## Extract model results of interest, write TAF output tables
 
-## Before: dls.txt (local)
-## After:  dls.txt (local)
+## Before: dls.txt (model)
+## After:  dls.txt (output)
 
-dir.create("output", showWarnings=FALSE, recursive=TRUE)
+dir.create("output", showWarnings=FALSE)
 
-# Copy DLS results to output directory
+## Copy DLS results to output directory
 invisible(file.copy("model/dls.txt", "output/dls.txt", overwrite=TRUE))

@@ -1,14 +1,12 @@
-## Convert input data to model format
+## Convert data to model format, write model input file
 
-## Before: catch.csv, survey.csv
-## After:  input.RData
-
-ftp <- "../ftp/wgef/2015/rjm-347d/"
+## Before: catch.csv, survey.csv (db)
+## After:  input.RData (input)
 
 dir.create("input", showWarnings=FALSE)
 
 ## Get catch and survey data
-catch <- read.csv(paste0(ftp, "input/catch.csv"))
-survey <- read.csv(paste0(ftp, "input/survey.csv"))
+catch <- read.csv("db/catch.csv")
+survey <- read.csv("db/survey.csv")
 
 save(catch, survey, file="input/input.RData")

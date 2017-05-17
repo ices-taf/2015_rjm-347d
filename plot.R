@@ -1,14 +1,12 @@
 ## Plot DLS results
 
-## Before: survey.csv, dls.txt
+## Before: survey.csv, dls.txt (db, model)
 ## After:  [plot]
 
 require(icesTAF, quietly=TRUE)
 
-## Download DLS input and output from local FTP server
-ftp <- "../ftp/wgef/2015/rjm-347d/"
-
-survey <- read.csv(paste0(ftp, "input/survey.csv"))
+## Get DLS data and results
+survey <- read.csv("db/survey.csv")
 dls <- read.dls("output/dls.txt")
 
 ## Plot
