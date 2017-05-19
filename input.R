@@ -1,4 +1,4 @@
-## Convert data to model format, write model input file
+## Convert data to model format, write model input files
 
 ## Before: catch.csv, survey.csv (db)
 ## After:  input.RData (input)
