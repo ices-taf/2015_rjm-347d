@@ -1,10 +1,11 @@
 ## Run core scripts: db, input, model, output, upload
 
-attach(NULL, name="TAF")
-assign("taf.root", getwd(), pos="TAF")
+require(icesTAF, quietly=TRUE)
 
-setwd(taf.root); rm(list=ls()); cat("* Running db.R ...\n");     source("db.R");     cat("Done\n")
-setwd(taf.root); rm(list=ls()); cat("* Running input.R ...\n");  source("input.R");  cat("Done\n")
-setwd(taf.root); rm(list=ls()); cat("* Running model.R ...\n");  source("model.R");  cat("Done\n")
-setwd(taf.root); rm(list=ls()); cat("* Running output.R ...\n"); source("output.R"); cat("Done\n")
-setwd(taf.root); rm(list=ls()); cat("* Running upload.R ...\n"); source("upload.R"); cat("Done\n")
+options(taf.root=getwd())
+
+sourceTAF("db.R", rm=TRUE)
+sourceTAF("input.R", rm=TRUE)
+sourceTAF("model.R", rm=TRUE)
+sourceTAF("output.R", rm=TRUE)
+sourceTAF("upload.R", rm=TRUE)

@@ -3,10 +3,12 @@
 ## Before: catch.csv, survey.csv (db)
 ## After:  input.RData (input)
 
-dir.create("input", showWarnings=FALSE)
+require(icesTAF, quietly=TRUE)
+
+mkdir("input")
 
 ## Get catch and survey data
-catch <- read.csv("db/catch.csv")
-survey <- read.csv("db/survey.csv")
+catch <- read.taf("db/catch.csv")
+survey <- read.taf("db/survey.csv")
 
 save(catch, survey, file="input/input.RData")

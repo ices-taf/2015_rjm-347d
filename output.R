@@ -3,7 +3,9 @@
 ## Before: dls.txt (model)
 ## After:  dls.txt (output)
 
-dir.create("output", showWarnings=FALSE)
+require(icesTAF, quietly=TRUE)
+
+mkdir("output")
 
 ## Copy DLS results to output directory
-invisible(file.copy("model/dls.txt", "output/dls.txt", overwrite=TRUE))
+cp("model/dls.txt", "output/dls.txt")

@@ -5,10 +5,10 @@
 
 require(icesTAF, quietly=TRUE)
 
-dir.create("upload/plot", showWarnings=FALSE, recursive=TRUE)
+mkdir("upload/plot")
 
 ## Get DLS data and results
-survey <- read.csv("upload/input/survey.csv")
+survey <- read.taf("upload/input/survey.csv")
 dls <- read.dls("upload/output/dls.txt")
 
 ## Plot

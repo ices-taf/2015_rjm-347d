@@ -6,7 +6,7 @@
 require(icesAdvice, quietly=TRUE)
 require(icesTAF, quietly=TRUE)
 
-dir.create("model", showWarnings=FALSE)
+mkdir("model")
 
 ## Get data
 load("input/input.RData")
