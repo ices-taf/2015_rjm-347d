@@ -8,4 +8,4 @@ require(icesTAF, quietly=TRUE)
 mkdir("output")
 
 ## Copy DLS results to output directory
-cp("model/dls.txt", "output/dls.txt")
+cp("model/dls.txt", "output")
