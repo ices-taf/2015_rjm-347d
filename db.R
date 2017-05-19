@@ -1,7 +1,7 @@
 ## Download and preprocess data, write TAF input tables
 
-## Before: surveys_all.csv, catch.csv (ftp)
-## After:  survey.csv, catch.csv (db)
+## Before: catch.csv, surveys_all.csv (ftp)
+## After:  catch.csv, survey.csv, summary.csv (db)
 
 require(icesTAF, quietly=TRUE)
 
@@ -9,7 +9,8 @@ ftp <- "https://raw.githubusercontent.com/ices-taf/ftp/master/wgef/2015/rjm-347d
 
 mkdir("db")
 
-## Download full survey data, select years and surveys of interest
+## Download data, select years and surveys of interest
+catch <- read.taf(paste0(ftp, "db/catch.csv"))
 survey <- read.taf(paste0(ftp, "db/surveys_all.csv"))
 survey <- survey[survey$Year %in% 1993:2014, names(survey) != "Unknown"]
 
@@ -18,10 +19,11 @@ survey[-1] <- sapply(survey[-1], function(x) x/mean(x, na.rm=TRUE))
 survey$Index <- rowMeans(survey[-1])
 
 ## Finalize tables
-survey <- survey[c("Year","Index")]
 row.names(survey) <- NULL
-catch <- read.taf(paste0(ftp, "db/catch.csv"))
+summary <- data.frame(Year=survey$Year, Catch=NA, Index=survey$Index)
+summary$Catch[summary$Year %in% catch$Year] <- catch$Catch
 
 ## Write TAF tables to db directory
-write.taf(survey, "db/survey.csv")
 write.taf(catch, "db/catch.csv")
+write.taf(survey, "db/survey.csv")
+write.taf(summary, "db/summary.csv")
