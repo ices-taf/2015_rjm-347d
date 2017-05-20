@@ -3,7 +3,7 @@
 ## Before: survey.csv, dls.txt (upload)
 ## After:  dls.png (upload)
 
-require(icesTAF, quietly=TRUE)
+library(icesTAF)
 
 mkdir("upload/plot")
 

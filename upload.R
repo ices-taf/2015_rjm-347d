@@ -3,7 +3,7 @@
 ## Before: catch.csv, survey.csv, summary.csv, dls.txt (db, output)
 ## After:  catch.csv, survey.csv, summary.csv, dls.txt (upload)
 
-require("icesTAF", quietly=TRUE)
+library(icesTAF)
 
 mkdir("upload/input")
 mkdir("upload/output")

@@ -1,6 +1,6 @@
 ## Run core scripts: db, input, model, output, upload
 
-require(icesTAF, quietly=TRUE)
+library(icesTAF)
 
 options(taf.root=getwd())
 

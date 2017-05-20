@@ -3,7 +3,7 @@
 ## Before: catch.csv, surveys_all.csv (ftp)
 ## After:  catch.csv, survey.csv, summary.csv (db)
 
-require(icesTAF, quietly=TRUE)
+library(icesTAF)
 
 ftp <- "https://raw.githubusercontent.com/ices-taf/ftp/master/wgef/2015/rjm-347d/"
 

@@ -3,7 +3,7 @@
 ## Before: catch.csv, survey.csv (db)
 ## After:  input.RData (input)
 
-require(icesTAF, quietly=TRUE)
+library(icesTAF)
 
 mkdir("input")
 

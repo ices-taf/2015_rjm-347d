@@ -3,7 +3,7 @@
 ## Before: dls.txt (model)
 ## After:  dls.txt (output)
 
-require(icesTAF, quietly=TRUE)
+library(icesTAF)
 
 mkdir("output")
 

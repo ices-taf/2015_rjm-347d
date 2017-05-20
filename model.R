@@ -3,8 +3,8 @@
 ## Before: input.RData (input)
 ## After:  dls.txt (model)
 
-require(icesAdvice, quietly=TRUE)
-require(icesTAF, quietly=TRUE)
+library(icesAdvice)
+library(icesTAF)
 
 mkdir("model")
 
