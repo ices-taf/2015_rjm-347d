@@ -23,7 +23,7 @@ row.names(survey) <- NULL
 summary <- data.frame(Year=survey$Year, Catch=NA, Index=survey$Index)
 summary$Catch[summary$Year %in% catch$Year] <- catch$Catch
 
-## Write TAF tables to db directory
+## Write tables to db directory
 write.taf(catch, "db/catch.csv")
 write.taf(survey, "db/survey.csv")
 write.taf(summary, "db/summary.csv")
