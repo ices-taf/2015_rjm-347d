@@ -2,10 +2,8 @@
 
 library(icesTAF)
 
-options(taf.root=getwd())
-
-sourceTAF("db.R", rm=TRUE)
-sourceTAF("input.R", rm=TRUE)
-sourceTAF("model.R", rm=TRUE)
-sourceTAF("output.R", rm=TRUE)
-sourceTAF("upload.R", rm=TRUE)
+sourceTAF("db.R")
+sourceTAF("input.R")
+sourceTAF("model.R")
+sourceTAF("output.R")
+sourceTAF("upload.R")
