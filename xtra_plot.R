@@ -8,7 +8,7 @@ library(icesTAF)
 mkdir("upload/plot")
 
 ## Get DLS data and results
-survey <- read.taf("upload/input/survey.csv")
+survey <- read.taf("upload/input/survey_tbl.csv")
 dls <- read.dls("upload/output/dls.txt")
 
 ## Plot
