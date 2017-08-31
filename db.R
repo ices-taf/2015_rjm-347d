@@ -8,7 +8,7 @@ library(icesTAF)
 mkdir("db")
 
 ## Download data, select years and surveys of interest
-catch <- read.taf("initial-data/catch.csv"))
+catch <- read.taf("initial-data/catch.csv")
 survey <- read.taf("initial-data/surveys_all.csv")
 survey <- survey[survey$Year %in% 1993:2014, names(survey) != "Unknown"]
 
