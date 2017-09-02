@@ -5,14 +5,14 @@
 
 library(icesTAF)
 
-mkdir("upload/plot")
+mkdir("plot")
 
 ## Get DLS data and results
-survey <- read.taf("upload/input/survey_tbl.csv")
-dls <- read.dls("upload/output/dls.txt")
+survey <- read.taf("db/survey.csv")
+dls <- read.dls("output/dls.txt")
 
 ## Plot
-png("upload/plot/dls.png", width=1200, height=1200, pointsize=24)
+png("plot/dls.png", width=1200, height=1200, pointsize=24)
 xlim <- c(1990, 2016)
 ylim <- c(0, max(pretty(survey$Index)))
 plot(Index~Year, survey, type="b", lty=3, xlim=xlim, ylim=ylim, yaxs="i", las=1)
