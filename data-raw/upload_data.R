@@ -1,7 +1,7 @@
-## Get and upload raw input data to the TAF database
+## Upload raw data to TAF database
 
-## Before: empty
-## After:  catch.csv, surveys_all.csv (data-raw)
+## Before: catch.csv, surveys_all.csv (user dir)
+## After:  catch.csv, surveys_all.csv (TAF database)
 
 upload.dataraw.taf <- function(filename, analysisName) {
   file <- httr::upload_file(filename)
@@ -9,8 +9,5 @@ upload.dataraw.taf <- function(filename, analysisName) {
   httr::POST(url, body = file)
 }
 
-# upload files to data-raw folder in TAF DB
 upload.dataraw.taf("d:/projects/ices-taf/ftp/wgef/2015/rjm-347d/db/catch.csv", "2015_rjm-347d")
 upload.dataraw.taf("d:/projects/ices-taf/ftp/wgef/2015/rjm-347d/db/surveys_all.csv", "2015_rjm-347d")
-
-# done
