@@ -1,13 +1,13 @@
-## Download and preprocess data, write TAF input tables
+## Preprocess data, write TAF data tables
 
 ## Before: catch.csv, surveys_all.csv (TAF database)
-## After:  catch.csv, survey.csv, summary.csv (db)
+## After:  catch.csv, survey.csv, summary.csv (data)
 
 library(icesTAF)
 
-mkdir("db")
+mkdir("data")
 
-url <- "http://taf.ices.local/taf/fs/2015_rjm-347d/data-raw/"
+url <- "http://taf.ices.local/taf/fs/2015_rjm-347d/raw/"
 
 ## Download data, select years and surveys of interest
 catch <- read.taf(paste0(url, "catch.csv"))
@@ -23,7 +23,7 @@ row.names(survey) <- NULL
 summary <- data.frame(Year=survey$Year, Catch=NA, Index=survey$Index)
 summary$Catch[summary$Year %in% catch$Year] <- catch$Catch
 
-## Write tables to db directory
-write.taf(catch, "db/catch.csv")
-write.taf(survey, "db/survey.csv")
-write.taf(summary, "db/summary.csv")
+## Write tables to data directory
+write.taf(catch, "data/catch.csv")
+write.taf(survey, "data/survey.csv")
+write.taf(summary, "data/summary.csv")
