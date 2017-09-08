@@ -1,14 +1,14 @@
 ## Plot data and results
 
-## Before: survey.csv, dls.txt (upload)
-## After:  dls.png (upload)
+## Before: survey.csv (data), dls.txt (output)
+## After:  dls.png (plot)
 
 library(icesTAF)
 
 mkdir("plot")
 
 ## Get DLS data and results
-survey <- read.taf("db/survey.csv")
+survey <- read.taf("data/survey.csv")
 dls <- read.dls("output/dls.txt")
 
 ## Plot
