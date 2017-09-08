@@ -1,7 +1,7 @@
-## Upload raw data to TAF file server
+## Upload raw data to TAF database
 
 ## Before: catch.csv, surveys_all.csv (user dir)
-## After:  catch.csv, surveys_all.csv (TAF file server)
+## After:  catch.csv, surveys_all.csv (TAF database)
 
 library(icesTAF)
 
