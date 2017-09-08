@@ -1,17 +1,17 @@
 ## Download and preprocess data, write TAF input tables
 
-## Before: catch.csv, surveys_all.csv (data-raw on TAF DB)
-## After:  catch.csv, survey.csv, summary.csv (input)
+## Before: catch.csv, surveys_all.csv (TAF database)
+## After:  catch.csv, survey.csv, summary.csv (db)
 
 library(icesTAF)
 
 mkdir("db")
 
-file_dir <- "http://localhost:1234/fs/2015_rjm-347d/data-raw/"
+url <- "http://taf.ices.local/taf/fs/2015_rjm-347d/data-raw/"
 
 ## Download data, select years and surveys of interest
-catch <- read.taf(paste0(file_dir, "catch.csv"))
-survey <- read.taf(paste0(file_dir, "surveys_all.csv"))
+catch <- read.taf(paste0(url, "catch.csv"))
+survey <- read.taf(paste0(url, "surveys_all.csv"))
 survey <- survey[survey$Year %in% 1993:2014, names(survey) != "Unknown"]
 
 ## Scale each survey to average 1, combine index as average of three surveys
