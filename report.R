@@ -12,7 +12,7 @@ survey <- read.taf("data/survey.csv")
 dls <- read.dls("output/dls.txt")
 
 ## Plot
-png("report/dls.png", width=1200, height=1200, pointsize=24)
+png("report/dls.png", width=800, height=600, pointsize=24)
 xlim <- c(1990, 2016)
 ylim <- c(0, max(pretty(survey$Index)))
 plot(Index~Year, survey, type="b", lty=3, xlim=xlim, ylim=ylim, yaxs="i", las=1)
