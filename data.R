@@ -7,7 +7,7 @@ library(icesTAF)
 
 mkdir("data")
 
-url <- "http://taf.ices.local/taf/fs/2015_rjm-347d/raw/"
+url <- "https://raw.githubusercontent.com/ices-taf/ftp/master/wgef/2015/rjm-347d/raw/"
 
 ## Download data, select years and surveys of interest
 catch <- read.taf(paste0(url, "catch.csv"))
