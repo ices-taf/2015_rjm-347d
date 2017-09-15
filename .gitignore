@@ -4,9 +4,8 @@
 .Ruserdata
 *.Rproj
 
-db/
+data/
 input/
 model/
 output/
-plot/
-table/
+report/
