@@ -13,12 +13,10 @@ dls <- read.dls("output/dls.txt")
 
 ## Plot
 tafpng("dls")
-xlim <- c(1990, 2016)
-plot(Index~Year, survey, type="b", lty=3, xlim=xlim, ylim=lim(survey$Index),
-     yaxs="i", las=1)
-segments(2008, dls$i1bar, 2012, lwd=2)
-segments(2013, dls$i2bar, 2014, lwd=2)
-title(main="rjm-347d (2015 DLS advice)")
-grid()
+plot(Index~Year, survey, type="b", lty=3, ylim=lim(survey$Index), yaxs="i")
+segments(2008, dls$i1bar, 2012, lwd=3, col=taf.orange)
+segments(2013, dls$i2bar, 2014, lwd=3, col=taf.orange)
+title(main="DLS 3.2 advice")
+grid(lwd=2)
 box()
 dev.off()
