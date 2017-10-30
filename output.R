@@ -1,4 +1,4 @@
-## Extract model results of interest, write TAF output tables
+## Extract results of interest, write TAF output tables
 
 ## Before: dls.txt (model)
 ## After:  dls.txt (output)
