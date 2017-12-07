@@ -1,7 +1,7 @@
 ## Prepare plots and tables for report
 
 ## Before: summary.csv (data)
-## After:  survey.png (report)
+## After:  summary.csv, survey.png (report)
 
 library(icesTAF)
 
