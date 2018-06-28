@@ -12,7 +12,6 @@ mkdir("model")
 load("input/input.RData")
 
 ## Apply DLS method 3.2
-i1 <- survey$Index[nrow(survey)-(6:2)]  # five year period from n-6 to n-2
-dls <- DLS3.2(mean(catch$Catch), survey$Index, i1=i1)
+dls <- DLS3.2(mean(catch$Catch), survey$Index, len=c(5,2))
 
 write.dls(dls, "model/dls.txt")
