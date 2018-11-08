@@ -8,8 +8,8 @@ library(icesTAF)
 mkdir("data")
 
 ## Read data, select years and surveys of interest
-catch <- read.taf("begin/initial/data/catch.csv")
-survey <- read.taf("begin/initial/data/surveys_all.csv")
+catch <- read.taf("bootstrap/data/catch.csv")
+survey <- read.taf("bootstrap/data/surveys_all.csv")
 survey <- survey[survey$Year %in% 1993:2014, names(survey) != "Unknown"]
 
 ## Scale each survey to average 1, combine index as average of three surveys
