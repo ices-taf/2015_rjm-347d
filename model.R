@@ -1,6 +1,6 @@
 ## Run analysis, write model results
 
-## Before: input.RData (input)
+## Before: catch.csv, survey.csv (data)
 ## After:  dls.txt (model)
 
 library(icesAdvice)
@@ -8,8 +8,9 @@ library(icesTAF)
 
 mkdir("model")
 
-## Get data
-load("input/input.RData")
+## Get catch and survey data
+catch <- read.taf("data/catch.csv")
+survey <- read.taf("data/survey.csv")
 
 ## Apply DLS method 3.2
 dls <- DLS3.2(mean(catch$Catch), survey$Index, len=c(5,2))
