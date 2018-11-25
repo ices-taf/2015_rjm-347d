@@ -1,37 +1,23 @@
-## Set up assessment, download data and software
+mkdir("data")
+mkdir("library")
+mkdir("packages")
+.libPaths(c("library", .libPaths()))
 
-## Before:
-## After:
-
-# libraries
-library(icesTAF)
-
-# create data folder in bootstrap
-mkdir("bootstrap/data")
-
-# read dataset citations and process
+## Process data citations
 datasets <- bibtex::read.bib("CITATIONS.bib")
-for (dataset in datasets) {
-  contents <- scan(dataset$url, character(0))
-  writeLines(contents, file.path("bootstrap", "data", attr(dataset, "key")))
+for(dat in datasets)
+{
+  cp(dat$source, file.path("data",attr(dat,"key")))
 }
 
-# create dependencies folders in bootstrap
-mkdir("bootstrap/packages")
-mkdir("bootstrap/library")
-
-# download and install dependencies
-op <- .libPaths()
-.libPaths("bootstrap/library")
-
+## Download and install dependencies
 packages <- bibtex::read.bib("DEPENDENCIES.bib")
-for (package in packages) {
-  url <-
-    paste0("https://api.github.com/repos/",
-          gsub("@", "/tarball/", package$version))
-  fname <- file.path("bootstrap", "packages", paste0(attr(package, "key"), ".tar.gz"))
-  download.file(url, destfile = fname, mode = "wb")
-  devtools::install_github(package$version, force = TRUE)
+for(pkg in packages)
+{
+  spec <- remotes::parse_repo_spec(pkg$source)
+  url <- paste0("https://api.github.com/repos/",
+                spec$username, "/", spec$repo, "/tarball/", spec$ref)
+  targz <- paste0(sub("@", "_", sub(".*/", "", pkg$source)), ".tar.gz")
+  suppressWarnings(download(url, destfile=file.path("packages", targz)))
+  remotes::install_github(pkg$source, upgrade=FALSE)
 }
-
-.libPaths(c("bootstrap/library", op))
