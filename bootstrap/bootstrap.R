@@ -1,3 +1,5 @@
+library(icesTAF)
+
 mkdir("data")
 mkdir("library")
 mkdir("packages")
