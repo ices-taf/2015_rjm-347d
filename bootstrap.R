@@ -1,5 +1,7 @@
 library(icesTAF)
 
+setwd("bootstrap")
+
 mkdir("data")
 mkdir("library")
 mkdir("software")
@@ -37,3 +39,5 @@ for(soft in software)
 
 ## Remove empty folders
 sapply(c("data","library","software"), rmdir)
+
+setwd("..")
