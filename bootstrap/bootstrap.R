@@ -2,24 +2,24 @@ library(icesTAF)
 
 mkdir("data")
 mkdir("library")
-mkdir("packages")
+mkdir("software")
 .libPaths(c("library", .libPaths()))
 
-## Process data citations
-datasets <- bibtex::read.bib("CITATIONS.bib")
+## Process data
+datasets <- bibtex::read.bib("DATA.bib")
 for(dat in datasets)
 {
   cp(dat$source, file.path("data", attr(dat,"key")))
 }
 
-## Download and install dependencies
-packages <- bibtex::read.bib("DEPENDENCIES.bib")
-for(pkg in packages)
+## Process software
+software <- bibtex::read.bib("SOFTWARE.bib")
+for(soft in software)
 {
-  spec <- remotes::parse_repo_spec(pkg$source)
+  spec <- remotes::parse_repo_spec(soft$source)
   url <- paste0("https://api.github.com/repos/",
                 spec$username, "/", spec$repo, "/tarball/", spec$ref)
   targz <- paste0(spec$repo, "_", spec$ref, ".tar.gz")
-  suppressWarnings(download(url, destfile=file.path("packages", targz)))
-  remotes::install_github(pkg$source, upgrade=FALSE, force=TRUE)
+  suppressWarnings(download(url, destfile=file.path("software", targz)))
+  remotes::install_github(soft$source, upgrade=FALSE, force=TRUE)
 }
