@@ -21,5 +21,5 @@ for(pkg in packages)
                 spec$username, "/", spec$repo, "/tarball/", spec$ref)
   targz <- paste0(sub("@", "_", sub(".*/", "", pkg$source)), ".tar.gz")
   suppressWarnings(download(url, destfile=file.path("packages", targz)))
-  remotes::install_github(pkg$source, upgrade=FALSE)
+  remotes::install_github(pkg$source, upgrade=FALSE, force=TRUE)
 }
