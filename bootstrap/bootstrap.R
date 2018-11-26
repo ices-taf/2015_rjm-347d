@@ -9,7 +9,7 @@ mkdir("software")
 datasets <- bibtex::read.bib("DATA.bib")
 for(dat in datasets)
 {
-  cp(dat$source, file.path("data", attr(dat,"key")))
+  cp(dat$source, "data")
 }
 
 ## Process software
