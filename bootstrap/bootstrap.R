@@ -9,7 +9,7 @@ mkdir("packages")
 datasets <- bibtex::read.bib("CITATIONS.bib")
 for(dat in datasets)
 {
-  cp(dat$source, file.path("data",attr(dat,"key")))
+  cp(dat$source, file.path("data", attr(dat,"key")))
 }
 
 ## Download and install dependencies
@@ -19,7 +19,7 @@ for(pkg in packages)
   spec <- remotes::parse_repo_spec(pkg$source)
   url <- paste0("https://api.github.com/repos/",
                 spec$username, "/", spec$repo, "/tarball/", spec$ref)
-  targz <- paste0(sub("@", "_", sub(".*/", "", pkg$source)), ".tar.gz")
+  targz <- paste0(spec$repo, "_", spec$ref, ".tar.gz")
   suppressWarnings(download(url, destfile=file.path("packages", targz)))
   remotes::install_github(pkg$source, upgrade=FALSE, force=TRUE)
 }
