@@ -1,11 +1,9 @@
 library(icesTAF)
+taf.library()
 
 setwd("bootstrap")
 
-mkdir("data")
-mkdir("library")
-mkdir("software")
-.libPaths(c("library", .libPaths()))
+mkdir(c("data", "library", "software"))
 
 ## Process data
 datasets <- bibtex::read.bib("DATA.bib")
@@ -38,6 +36,6 @@ for(soft in software)
 }
 
 ## Remove empty folders
-sapply(c("data","library","software"), rmdir)
+rmdir(c("data", "library", "software")
 
 setwd("..")
