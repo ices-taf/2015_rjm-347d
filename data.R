@@ -1,6 +1,6 @@
 ## Preprocess data, write TAF data tables
 
-## Before: catch.csv, surveys_all.csv (begin/initial/data)
+## Before: catch.csv, surveys_all.csv (bootstrap/data)
 ## After:  catch.csv, summary.csv, survey.csv (data)
 
 library(icesTAF)
