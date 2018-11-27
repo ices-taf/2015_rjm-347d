@@ -1,5 +1,5 @@
 library(icesTAF)
-taf.library()
+taf.library(quiet=TRUE)
 
 setwd("bootstrap")
 
@@ -36,6 +36,6 @@ for(soft in software)
 }
 
 ## Remove empty folders
-rmdir(c("data", "library", "software")
+rmdir(c("data", "library", "software"))
 
 setwd("..")
