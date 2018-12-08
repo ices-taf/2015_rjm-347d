@@ -7,3 +7,6 @@
 
 # ignore installed packages
 bootstrap/library/
+
+# ignore log file
+log.txt
