@@ -11,8 +11,8 @@ summary <- read.taf("data/summary.csv")
 
 ## Plot
 tafpng("survey")
-plot(summary$Year, summary$Index, type="b", lty=3, lwd=4,
-     ylim=lim(summary$Index), yaxs="i", main="Survey Index",
+plot(summary$Year, summary$Index, type="b", lty=3, lwd=2,
+     ylim=lim(summary$Index), yaxs="i", main="Survey",
      xlab="Year", ylab="Index", panel.first=grid(lwd=2))
 dev.off()
 
