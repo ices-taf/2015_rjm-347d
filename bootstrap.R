@@ -37,5 +37,6 @@ for(soft in software)
 
 ## Remove empty folders
 rmdir(c("data", "library", "software"))
+rmdir("library:", recursive=TRUE)  # this directory name can appear in Linux
 
 setwd("..")
