@@ -12,7 +12,7 @@ summary <- read.taf("data/summary.csv")
 ## Plot
 taf.png("survey")
 plot(summary$Year, summary$Index, type="b", lty=3, lwd=2,
-     ylim=lim(summary$Index), yaxs="i", main="Survey",
+     ylim=lim(summary$Index), yaxs="i", main="Survey at FishForum",
      xlab="Year", ylab="Index", panel.first=grid(lwd=2))
 dev.off()
 
