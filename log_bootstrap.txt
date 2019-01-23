@@ -1,0 +1,43 @@
+Started analysis @ 15:11:56, 23 January 2019
+running
+  'D:\programs\R\R-3.5.2\bin\x64\Rterm.exe --slave --no-restore -e icesTAF::taf.bootstrap()'
+
+[15:11:56] Bootstrap procedure running...
+Downloading GitHub repo cran/icesAdvice@2.0-0
+Running `R CMD build`...
+* checking for file 'C:\Windows\Temp\RtmpQDf875\remotes1174755d9e9\cran-icesAdvice-85dea65/DESCRIPTION' ... OK
+* preparing 'icesAdvice':
+* checking DESCRIPTION meta-information ... OK
+* checking for LF line-endings in source and make files and shell scripts
+* checking for empty or unneeded directories
+* looking to see if a 'data/datalist' file should be added
+* building 'icesAdvice_2.0-0.tar.gz'
+Installing package into 'D:/projects/ICES.TAF/repositories/2015_rjm-347d/bootstrap/library'
+(as 'lib' is unspecified)
+* installing *source* package 'icesAdvice' ...
+** R
+** data
+*** moving datasets to lazyload DB
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+  converting help for package 'icesAdvice'
+    finding HTML links ... done
+    Bpa                                     html  
+    DLS3.2                                  html  
+    Fpa                                     html  
+    icesAdvice-package                      html  
+    icesRound                               html  
+    mohn                                    html  
+    read.dls                                html  
+    shake                                   html  
+    sigmaCI                                 html  
+    sigmaPA                                 html  
+    write.dls                               html  
+** building package indices
+** testing if installed package can be loaded
+*** arch - i386
+*** arch - x64
+* DONE (icesAdvice)
+In R CMD INSTALL
+[15:12:03] Bootstrap procedure done
