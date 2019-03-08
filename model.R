@@ -4,7 +4,6 @@
 ## After:  dls.txt (model)
 
 library(icesTAF)
-taf.library()
 library(icesAdvice)
 
 mkdir("model")
