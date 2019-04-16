@@ -19,4 +19,4 @@ dev.off()
 ## Table
 summary <- rnd(summary, "Catch")
 summary <- rnd(summary, "Index", 3)
-write.taf(summary, "report/summary.csv")
+write.taf(summary, dir="report")
