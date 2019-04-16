@@ -22,6 +22,6 @@ summary <- data.frame(Year=survey$Year, Catch=NA, Index=survey$Index)
 summary$Catch[summary$Year %in% catch$Year] <- catch$Catch
 
 ## Write tables to data directory
-write.taf(catch, "data/catch.csv")
-write.taf(survey, "data/survey.csv")
-write.taf(summary, "data/summary.csv")
+write.taf(catch, dir="data")
+write.taf(survey, dir="data")
+write.taf(summary, dir="data")
