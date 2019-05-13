@@ -1,11 +1,11 @@
-## Write DLS results into output folder
+## Extract results of interest, write TAF output tables
 
-## Before: dls.txt (local)
-## After:  dls.txt (ftp)
+## Before: dls.txt (model)
+## After:  dls.txt (output)
 
-ftp <- "../../../ftp/wgef/2015/rjm-347d/"
+library(icesTAF)
 
-dir.create(paste0(ftp,"output"), showWarnings=FALSE, recursive=TRUE)
+mkdir("output")
 
-# Copy DLS results to local FTP directory
-invisible(file.copy("model/dls.txt", paste0(ftp,"output/dls.txt"), overwrite=TRUE))
+## Copy DLS results to output directory
+cp("model/dls.txt", "output")

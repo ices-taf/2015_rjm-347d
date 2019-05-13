@@ -1,18 +1,18 @@
-## Run DLS analysis
+## Run analysis, write model results
 
-## Before: input.RData
-## After:  dls.txt
+## Before: catch.csv, survey.csv (data)
+## After:  dls.txt (model)
 
-require(icesAdvice, quietly=TRUE)
-require(icesTAF, quietly=TRUE)
+library(icesTAF)
+library(icesAdvice)
 
-dir.create("model", showWarnings=FALSE)
+mkdir("model")
 
-## Get data
-load("input/input.RData")
+## Get catch and survey data
+catch <- read.taf("data/catch.csv")
+survey <- read.taf("data/survey.csv")
 
-## Apply DLS method 3.2
-i1 <- head(tail(survey$Index, 7), 5)
-names(i1) <- 2008:2012
-dls <- DLS3.2(mean(catch$Catch), survey$Index, i1=i1)
-writeDLS(dls, "model/dls.txt")
+## Apply DLS method 3.2, comparing 5 years and 2 years
+dls <- DLS3.2(mean(catch$Catch), survey$Index, len=c(5,2))
+
+write.dls(dls, "model/dls.txt")
