@@ -19,4 +19,4 @@ To view the results created on the TAF server, browse the
 [GitHub taf branch](https://github.com/ices-taf/2015_rjm-347d/tree/taf).
 
 Assessments results can also be browsed on the
-[TAF application](https://taf.ices.dk/app/stock#!/2015/rjm-347d).
+[TAF application](https://taf.ices.dk/app/stock#!/2015/rjm-347d)
