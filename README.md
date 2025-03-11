@@ -1,5 +1,7 @@
 # 2015_rjm-347d
-2015 - Spotted ray (Raja montagui) in Subarea IV, and Divisions IIIa and VIId (North Sea, Skagerrak, Kattegat, and Eastern English Channel) - WGEF
+
+2015 - Spotted ray (Raja montagui) in Subarea IV, and Divisions IIIa and VIId
+(North Sea, Skagerrak, Kattegat, and Eastern English Channel) - WGEF
 
 ## How to run
 
@@ -17,6 +19,3 @@ sourceAll()
 
 To view the results created on the TAF server, browse the
 [GitHub taf branch](https://github.com/ices-taf/2015_rjm-347d/tree/taf).
-
-Assessments results can also be browsed on the
-[TAF application](https://taf.ices.dk/app/stock#!/2015/rjm-347d)
