@@ -1,12 +1,12 @@
-.Rproj.user
-.Rhistory
-.RData
-.Ruserdata
-
+/boot/data
+/boot/library
+/boot/software
+/data
+/model
+/output
+/report
 *.Rproj
-
-# ignore installed packages
-bootstrap/library/
-
-# ignore log file
-log.txt
+.RData
+.Rhistory
+.Rproj.user
+.Ruserdata
