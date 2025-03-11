@@ -5,14 +5,14 @@
 
 ## How to run
 
-Install the icesTAF package, version >=3.0 from CRAN.
+Install the icesTAF package, version >=4.2 from CRAN.
 
 Then open R in the `2015_rjm-347d` directory and run:
 
 ```
 library(icesTAF)
-taf.bootstrap()
-sourceAll()
+taf.boot()
+source.all()
 ```
 
 ## Explore results
