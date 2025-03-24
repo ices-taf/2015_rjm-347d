@@ -18,8 +18,7 @@ survey$Index <- rowMeans(survey[-1])
 
 # Finalize tables
 row.names(survey) <- NULL
-summary <- data.frame(Year=survey$Year, Catch=NA, Index=survey$Index)
-summary$Catch[summary$Year %in% catch$Year] <- catch$Catch
+summary <- merge(catch, survey[c("Year","Index")], all=TRUE)
 
 # Write tables to data directory
 write.taf(catch, dir="data")
