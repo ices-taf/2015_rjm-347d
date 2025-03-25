@@ -1,4 +1,4 @@
-# Prepare plots and tables for report
+# Produce plots and tables for report
 
 # Before: summary.csv (data)
 # After:  summary.csv, survey.png (report)

@@ -1,4 +1,4 @@
-# Preprocess data, write TAF data tables
+# Prepare data, write CSV data tables
 
 # Before: catch.csv, surveys_all.csv (boot/data)
 # After:  catch.csv, summary.csv, survey.csv (data)
@@ -18,7 +18,7 @@ survey$Index <- rowMeans(survey[-1])
 
 # Finalize tables
 row.names(survey) <- NULL
-summary <- merge(catch, survey[c("Year","Index")], all=TRUE)
+summary <- merge(catch, survey[c("Year", "Index")], all=TRUE)
 
 # Write tables to data directory
 write.taf(catch, dir="data")
